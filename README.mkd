@@ -1,10 +1,10 @@
 # multi-everyhing bash init script management
 
-I pick up this idea from axel diercksen at around 1991 when i was a still
-young at working with unix and shells. Of course i messed it up over the
-decades but it works for me like it is right now. Now i finally put it under
-version control to have a baseline from which i will fix the broken parts and
-add some missing features. 
+I started with this and picked up ideas from axel dirksen at around 1991 when
+i was a still young at working with unix and shells. Of course i messed it up
+over the decades but it works for me like it is right now. But not as good as
+it could. So i finally put it under version control to have a baseline from
+which i will fix the broken parts and add missing features. 
 
 rc-packages is about splitting up your bash configuration in multiple files
 and selectivly apply them depending on the current context. Contexts are: OS
