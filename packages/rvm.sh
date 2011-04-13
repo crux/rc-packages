@@ -1,14 +1,14 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 function clear-rails-and-ruby-package() {
-    unalias r
-    unalias testrb
-    unalias ri
-    unalias rdoc
-    unalias rake
-    unalias irb
-    unalias gem
-    unalias er
+    unalias -a r
+    unalias -a testrb
+    unalias -a ri
+    unalias -a rdoc
+    unalias -a rake
+    unalias -a irb
+    unalias -a gem
+    unalias -a er
 }
 clear-rails-and-ruby-package
 
