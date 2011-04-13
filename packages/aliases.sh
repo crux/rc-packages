@@ -8,7 +8,7 @@ function gsay() {
 alias http_status_codes="cheat http_status_codes"
 
 #   some bread and butter aliases 
-alias a='alias'
+alias a=alias
 alias A='cd ~/rc/packages; vi aliases.sh; source aliases.sh; cd -'
 alias ..="cd .."
 alias cd..="cd .."
