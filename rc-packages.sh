@@ -9,7 +9,7 @@ if [ "${RC_PACKAGES}x" != "x" ]; then
 fi
 
 # define base dir for packages and further source commands
-RC_PACKAGES=$(basename ${BASH_SOURCE})/packages
+RC_PACKAGES_DIR=$(dirname ${BASH_SOURCE})/packages
 
 # debug echo function
 function decho() {
@@ -24,7 +24,6 @@ function dechooff() {
     export DECHO=off
 }
 #dechoon
-
 
 function rc-package-list() {
     for pkg in ${RC_PACKAGES}; do 
@@ -53,21 +52,22 @@ function rc-package-add() {
     m=""
 
     decho "base package: ${package}"
-    script=${RC_PACKAGES}/${package}.generic.sh
+    script=${RC_PACKAGES_DIR}/${package}.generic.sh
     [ -f ${script} ] && source ${script} && m="${m}${m:+,}generic"
-    script=${RC_PACKAGES}/${package}.sh
+
+    script=${RC_PACKAGES_DIR}/${package}.sh
     [ -f ${script} ] && source ${script} && m="${m}${m:+,}generic"
 
     hostname=${HOSTNAME/.*/}
     for variant in default ${OSTYPE/10.0/} ${hostname}; do
         # find script either in variant dir...
-        script=${RC_PACKAGES}/${variant}/${package}.sh
+        script=${RC_PACKAGES_DIR}/${variant}/${package}.sh
         if [ -f ${script} ]; then
             decho "variant: ${script}"
             source ${script} && m="${m}${m:+,}${variant}"
         fi
         # ..or with variant in script name
-        script=${RC_PACKAGES}/${package}.${variant}.sh
+        script=${RC_PACKAGES_DIR}/${package}.${variant}.sh
         if [ -f ${script} ]; then
             decho "variant: ${script}"
             source ${script} && m="${m}${m:+,}${variant}"
