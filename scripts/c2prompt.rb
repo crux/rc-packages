@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 
-puts ENV['PWD']
+d = File.expand_path ENV['PWD']
+d.sub! /#{ENV['HOME']}/, '~'
+
+m = d.match %r[([^/]*/[^/]*$)]
+m && d = m[1]
+
+puts d
 
 __END__
 
