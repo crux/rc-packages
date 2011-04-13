@@ -10,6 +10,7 @@ fi
 
 # define base dir for packages and further source commands
 RC_PACKAGES_DIR=$(dirname ${BASH_SOURCE})/packages
+RC_SCRIPT_DIR=$(dirname ${BASH_SOURCE})/scripts
 
 # debug echo function
 function decho() {

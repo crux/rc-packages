@@ -29,7 +29,7 @@ function cd() {
 
     builtin cd "${1:-${HOME}}"
 #echo --$1--
-    w=$(~/rc/c2prompt.pl)
+    w=$(${RC_SCRIPT_DIR}/c2prompt.rb)
 #echo --$w--
     #PS1="\e[39m\u\e[m \e[32m\h\e[0m\] ${w}: "
     #PS1="\[\e[1;31;44m\] \u \[\e[0m\] @ \[\e[32m\h\[\e[0m\] ${w}: "
@@ -37,4 +37,3 @@ function cd() {
     #PS1="\[\e[39m\]\u\[\e[0m\]@\[\e[32m\h\[\e[0m\] ${w}: "
     PS2=" >> "
 }
-

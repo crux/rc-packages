@@ -1,5 +1,5 @@
 function pathfix {
-    script=${RC_PACKAGES}/../scripts/pathfix.rb
+    script=${RC_SCRIPT_DIR}/pathfix.rb
     new_path=$(${script} $*)
     if [ "$?" == 0 ]; then 
         PATH=${new_path}
